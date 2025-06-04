@@ -1,7 +1,6 @@
 import React, { useState } from "react";
 import { useNavigate } from "react-router-dom";
 import "./Auth.css";
-import api from "./api"; // já está feito
 
 function Register() {
   const navigate = useNavigate();
@@ -44,7 +43,7 @@ function Register() {
     }
 
     try {
-      await api.post("/registro", { email, senha }, {
+      const res = await fetch("http://127.0.0.1:5000/registro", {
         method: "POST",
         headers: { "Content-Type": "application/json" },
         body: JSON.stringify({ email, senha }),
