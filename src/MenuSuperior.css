@@ -1,0 +1,86 @@
+.menu-superior {
+  position: fixed;
+  top: 6px;
+  left: 50%;
+  transform: translateX(-50%);
+  width: auto;
+  max-width: 800px;
+  padding: 6px 16px; /* altura e espaçamento mais compactos */
+  background-color: #111;
+  color: #fff;
+  border-radius: 12px;
+  box-shadow: 0 4px 12px rgba(0, 0, 0, 0.4);
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  z-index: 999;
+}
+
+
+.logo {
+  font-weight: bold;
+  font-size: 18px;
+  color: #f1f1f1;
+  margin-right: 16px;
+}
+
+.barra-pesquisa {
+  flex: 1;
+  max-width: 400px;
+  margin: 0 16px;
+  padding: 6px 10px;
+  border-radius: 6px;
+  border: none;
+  background: #222;
+  color: #fff;
+  font-size: 14px;
+}
+
+.barra-pesquisa::placeholder {
+  color: #aaa;
+}
+
+.notificacoes {
+  position: relative;
+  cursor: pointer;
+  font-size: 20px;
+}
+
+.painel-notificacoes {
+  position: absolute;
+  top: 30px;
+  right: 0;
+  background-color: #222;
+  border: 1px solid #444;
+  padding: 10px;
+  width: 250px;
+  max-height: 300px;
+  overflow-y: auto;
+  color: #fff;
+  font-size: 14px;
+  z-index: 9999;
+  border-radius: 6px;
+  box-shadow: 0 2px 10px rgba(255, 255, 255, 0.1);
+}
+
+.botoes-exportar {
+  display: flex;
+  gap: 8px;
+  margin-left: 20px;
+}
+
+.botoes-exportar button {
+  background-color: #6a0f29;
+  color: white;
+  padding: 6px 12px;
+  border: none;
+  border-radius: 6px;
+  cursor: pointer;
+  font-weight: bold;
+  transition: background 0.2s ease;
+}
+
+.botoes-exportar button:hover {
+  background-color: #9e174d;
+}
+

@@ -1,0 +1,262 @@
+/* Fundo preto sólido */
+body {
+  margin: 0;
+  padding: 0;
+  background-color: #0f0f0f; /* Preto escuro sólido */
+  font-family: "Segoe UI", Tahoma, Geneva, Verdana, sans-serif;
+  color: white;
+}
+
+/* Container geral */
+.container {
+  max-width: 1000px;
+  margin: auto;
+  padding: 40px 20px;
+}
+
+/* Títulos */
+h1, h2, h3 {
+  font-family: "Segoe UI", Tahoma, Geneva, Verdana, sans-serif;
+  text-shadow: 1px 1px 4px rgba(255, 255, 255, 0.2);
+  color: #ffffff;
+  margin-bottom: 20px;
+  display: flex;
+  align-items: center;
+  gap: 8px;
+}
+
+/* Cards brancos elegantes */
+.card {
+  background-color: #ffffff;
+  border-radius: 12px;
+  padding: 25px;
+  margin-bottom: 30px;
+  box-shadow: 0 4px 12px rgba(255, 255, 255, 0.1);
+  color: #1a1a1a; /* Texto escuro para contraste */
+}
+
+/* Inputs e selects */
+input, select {
+  margin: 8px 8px 16px 0;
+  padding: 10px;
+  border-radius: 6px;
+  border: none;
+  outline: none;
+  background-color: #1f1f1f;
+  color: white;
+  width: 200px;
+}
+
+/* Botões */
+button {
+  padding: 10px 20px;
+  background-color: #1a73e8;
+  color: white;
+  font-weight: bold;
+  border: none;
+  border-radius: 8px;
+  cursor: pointer;
+  box-shadow: 0 4px 10px rgba(26, 115, 232, 0.5);
+  transition: transform 0.2s;
+}
+
+button:hover {
+  transform: translateY(-2px);
+  background-color: #4285f4;
+}
+
+/* Tabelas */
+table {
+  width: 100%;
+  border-collapse: collapse;
+  margin-top: 20px;
+}
+
+th, td {
+  padding: 10px;
+  border-bottom: 1px solid #444;
+  text-align: left;
+}
+
+/* Gráficos menores */
+.chart-container {
+  width: 100%;
+  max-width: 400px;
+  margin: auto;
+  background-color: #111;
+  padding: 20px;
+  border-radius: 12px;
+  box-shadow: 0 0 10px rgba(255,255,255,0.05);
+}
+
+.chart-container h3 {
+  color: white;
+}
+
+/* Select mês */
+.mes-select {
+  padding: 10px;
+  font-size: 16px;
+  background-color: #1f1f1f;
+  color: white;
+  border: none;
+  border-radius: 6px;
+  margin-bottom: 20px;
+}
+
+/* Alinhamento entre blocos */
+.flex-space {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 20px;
+  justify-content: space-between;
+  align-items: flex-start;
+}
+
+/* Corrige cor dos títulos dentro dos cards */
+.card h1,
+.card h2,
+.card h3 {
+  color: #1a1a1a;
+}
+
+/* === BARRA LATERAL COM DESIGN MINIMALISTA E ALINHADO === */
+.sidebar {
+  position: fixed;
+  top: 70px;
+  left: 0;
+  width: 60px;
+  height: calc(100% - 70px);
+  background-color: #6a0f29;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  padding-top: 20px;
+  transition: width 0.3s ease;
+  overflow: hidden;
+  border-top-right-radius: 16px;
+  z-index: 999;
+  box-shadow: 2px 0 10px rgba(0, 0, 0, 0.3);
+}
+
+.sidebar:hover {
+  width: 220px;
+  align-items: flex-start;
+  padding-left: 12px;
+}
+
+.sidebar-button {
+  background-color: transparent;
+  border: none;
+  border-radius: 8px;
+  padding: 10px 12px;
+  font-size: 15px;
+  font-weight: 500;
+  cursor: pointer;
+  transition: background 0.2s ease;
+  display: flex;
+  align-items: center;
+  color: white;
+  width: 100%;
+  overflow: hidden;
+  white-space: nowrap;
+  margin: 4px 6px;
+}
+
+.sidebar-button:hover {
+  background-color: rgba(255, 255, 255, 0.1);
+}
+
+.sidebar-button .icon {
+  width: 24px;
+  text-align: center;
+  font-size: 20px;
+  min-width: 24px;
+}
+
+.sidebar-button .text {
+  opacity: 0;
+  width: 0;
+  overflow: hidden;
+  transition: all 0.3s ease;
+}
+
+.sidebar:hover .sidebar-button .text {
+  opacity: 1;
+  width: auto;
+  margin-left: 10px;
+}
+
+/* Layout lado a lado e centralizado para seleção de mês/ano */
+.card#selecao {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  gap: 40px;
+  flex-wrap: wrap;
+}
+
+.selecao-grupo {
+  display: flex;
+  align-items: center;
+  gap: 10px;
+}
+
+.selecao-grupo label {
+  font-size: 16px;
+  font-weight: bold;
+  color: #1a1a1a;
+  min-width: 110px;
+  text-align: right;
+}
+
+.selecao-grupo select {
+  font-size: 16px;
+  padding: 10px;
+  background-color: #1f1f1f;
+  color: white;
+  border-radius: 6px;
+  border: none;
+  min-width: 140px;
+}
+.toast {
+  position: fixed;
+  top: 20px;
+  right: 20px;
+  background-color: #111;
+  color: white;
+  padding: 14px 20px;
+  border-radius: 8px;
+  box-shadow: 0 0 10px rgba(255,255,255,0.1);
+  z-index: 9999;
+  animation: slideToast 0.4s ease-out;
+  font-size: 0.95rem;
+  max-width: 280px;
+  white-space: wrap;
+}
+
+.toast.success {
+  background-color: #06d6a0;
+  color: #000;
+}
+
+.toast.warning {
+  background-color: #ffd166;
+  color: #000;
+}
+
+.toast.error {
+  background-color: #ef476f;
+}
+
+@keyframes slideToast {
+  from {
+    opacity: 0;
+    transform: translateX(100%);
+  }
+  to {
+    opacity: 1;
+    transform: translateX(0);
+  }
+}
+
