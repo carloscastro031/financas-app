@@ -2,7 +2,7 @@
 import axios from "axios";
 
 const api = axios.create({
-  baseURL: "http://127.0.0.1:5000", // seu backend local
+  baseURL: "https://financas-app-5.onrender.com", // seu backend local
 });
 
 // Adiciona o token JWT em todas as requisições automaticamente
