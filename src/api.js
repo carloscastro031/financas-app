@@ -1,7 +1,7 @@
 import axios from "axios";
 
 const api = axios.create({
-  baseURL: "https://financas-app-5.onrender.com", // ✅ seu backend na Render
+  baseURL: "https://financas-app-5.onrender.com", // ✅ seu backend publicado na Render
 });
 
 api.interceptors.request.use(
