@@ -1,6 +1,7 @@
 import React, { useState } from "react";
 import { useNavigate } from "react-router-dom";
 import "./Auth.css";
+import api from "./api"; // ✅ Importa API centralizada
 
 function Login({ onLogin }) {
   const navigate = useNavigate();
@@ -20,20 +21,17 @@ function Login({ onLogin }) {
     }
 
     try {
-      const res = await fetch("http://127.0.0.1:5000/login", {
-        method: "POST",
-        headers: { "Content-Type": "application/json" },
-        body: JSON.stringify({ email: emailLimpo, senha: senhaLimpa }),
+      const res = await api.post("/login", {
+        email: emailLimpo,
+        senha: senhaLimpa,
       });
 
-      const data = await res.json();
-
-      if (res.ok && data.token) {
-        localStorage.setItem("token", data.token);
+      if (res.status === 200 && res.data.token) {
+        localStorage.setItem("token", res.data.token); // ✅ Funciona no navegador
         if (onLogin) onLogin();
         navigate("/");
       } else {
-        setErro(data.erro || "E-mail ou senha incorretos.");
+        setErro(res.data.erro || "E-mail ou senha incorretos.");
       }
     } catch (err) {
       console.error("Erro no login:", err);
