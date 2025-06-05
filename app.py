@@ -37,8 +37,10 @@ def home():
 @app.route("/registro", methods=["POST"])
 def registro():
     data = request.get_json()
+    print("📥 Dados recebidos no registro:", data)
 
     if not data.get("email") or not data.get("senha"):
+        print("❌ Dados inválidos:", data)
         return jsonify({"erro": "Email e senha são obrigatórios"}), 400
 
     if Usuario.query.filter_by(email=data["email"]).first():
