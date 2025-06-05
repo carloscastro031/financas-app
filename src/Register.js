@@ -44,7 +44,10 @@ function Register() {
     }
 
     try {
-      const res = await api.post("/registro", { email, senha });
+      const res = await api.post("/registro", {
+        email,
+        senha
+      });
 
       if (res.status === 200) {
         alert("✅ Registro realizado com sucesso! Faça login.");
