@@ -11,7 +11,7 @@ print("✅ Iniciando app.py")
 app = Flask(__name__)
 
 # Configuração completa de CORS para aceitar JSON, POST, etc.
-CORS(app, resources={r"/*": {"origins": "https://financas-app-nine.vercel.app"}})
+CORS(app, resources={r"/*": {"origins": "https://financas-app-nine.vercel.app"}}, supports_credentials=True)
 
 
 # Configurações
