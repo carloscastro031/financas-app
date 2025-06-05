@@ -1,6 +1,7 @@
 import React, { useState } from "react";
 import { useNavigate } from "react-router-dom";
 import "./Auth.css";
+import api from "./api"; // ✅ Usando a API centralizada
 
 function Register() {
   const navigate = useNavigate();
@@ -43,21 +44,16 @@ function Register() {
     }
 
     try {
-      const res = await fetch("http://127.0.0.1:5000/registro", {
-        method: "POST",
-        headers: { "Content-Type": "application/json" },
-        body: JSON.stringify({ email, senha }),
-      });
+      const res = await api.post("/registro", { email, senha });
 
-      const data = await res.json();
-
-      if (res.ok) {
+      if (res.status === 200) {
         alert("✅ Registro realizado com sucesso! Faça login.");
         navigate("/login");
       } else {
-        setErro(data.erro || "Erro ao registrar.");
+        setErro(res.data.erro || "Erro ao registrar.");
       }
     } catch (err) {
+      console.error("Erro de registro:", err);
       setErro("Erro ao conectar com o servidor.");
     }
   };
