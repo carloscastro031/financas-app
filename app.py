@@ -4,15 +4,22 @@ from flask_sqlalchemy import SQLAlchemy
 from flask_jwt_extended import JWTManager, create_access_token, jwt_required, get_jwt_identity
 from werkzeug.security import generate_password_hash, check_password_hash
 from models.models import db, Usuario, Lancamento
+import os
+
 print("✅ Iniciando app.py")
 
 app = Flask(__name__)
-CORS(app)
+
+# Configuração completa de CORS para aceitar JSON, POST, etc.
+CORS(app, resources={r"/*": {"origins": "https://financas-app-nine.vercel.app"}})
+
 
 # Configurações
 app.config['SQLALCHEMY_DATABASE_URI'] = 'sqlite:///db.sqlite'
 app.config['SQLALCHEMY_TRACK_MODIFICATIONS'] = False
-app.config['JWT_SECRET_KEY'] = 'secreto-do-app'
+
+# 🛡️ Agora usando variável de ambiente para a chave JWT
+app.config['JWT_SECRET_KEY'] = os.environ.get('JWT_SECRET_KEY', 'chave-padrao-insegura')
 
 db.init_app(app)
 jwt = JWTManager(app)
