@@ -260,3 +260,69 @@ th, td {
   }
 }
 
+/* ... seu CSS original acima permanece inalterado até aqui */
+
+/* === AJUSTES PARA MOBILE (responsividade) === */
+@media (max-width: 768px) {
+  .sidebar {
+    width: 100%;
+    height: auto;
+    position: relative;
+    flex-direction: row;
+    justify-content: space-around;
+    border-top-right-radius: 0;
+    padding: 10px;
+    overflow-x: auto;
+  }
+
+  .sidebar-button {
+    font-size: 12px;
+    padding: 8px 10px;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+  }
+
+  .sidebar-button .icon {
+    font-size: 18px;
+  }
+
+  .sidebar-button .text {
+    display: block;
+    opacity: 1 !important;
+    width: auto;
+    margin-left: 0;
+    font-size: 10px;
+  }
+
+  .sidebar:hover {
+    width: 100%;
+    padding-left: 0;
+    align-items: center;
+  }
+
+  .main-content {
+    margin-left: 0 !important;
+  }
+}
+
+/* === BOTÃO DE LOGOUT FIXO NA PARTE INFERIOR DA SIDEBAR === */
+.logout-button {
+  margin-top: auto;
+  margin-bottom: 20px;
+  background-color: #ef476f;
+  color: white;
+  font-weight: bold;
+  width: calc(100% - 12px);
+  margin-left: 6px;
+  margin-right: 6px;
+  border: none;
+  border-radius: 6px;
+  padding: 10px 12px;
+  cursor: pointer;
+  transition: background 0.2s ease;
+}
+
+.logout-button:hover {
+  background-color: #ff6382;
+}

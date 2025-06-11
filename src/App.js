@@ -84,6 +84,13 @@ function App() {
           <span className="icon">🎯</span>
           <span className="text">Metas</span>
         </button>
+        <button className="logout-button" onClick={() => {
+  localStorage.removeItem("token");
+  window.location.href = "/login";
+}}>
+  Logout
+</button>
+
       </div>
 
       <div className="container">
