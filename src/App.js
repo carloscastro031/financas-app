@@ -56,42 +56,48 @@ function App() {
       <MenuSuperior onBuscar={handleBusca} notificacoes={notificacoes} />
 
       <div className="sidebar">
-        <button className="sidebar-button" onClick={() => scrollPara("selecao")}>
-          <span className="icon">📆</span>
-          <span className="text">Selecionar Mês/Ano</span>
-        </button>
-        <button className="sidebar-button" onClick={() => scrollPara("formulario")}>
-          <span className="icon">➕</span>
-          <span className="text">Adicionar</span>
-        </button>
-        <button className="sidebar-button" onClick={() => scrollPara("tabela")}>
-          <span className="icon">📋</span>
-          <span className="text">Lançamentos</span>
-        </button>
-        <button className="sidebar-button" onClick={() => scrollPara("resumo")}>
-          <span className="icon">📊</span>
-          <span className="text">Resumo</span>
-        </button>
-        <button className="sidebar-button" onClick={() => scrollPara("dashboard")}>
-          <span className="icon">📈</span>
-          <span className="text">Dashboard</span>
-        </button>
-        <button className="sidebar-button" onClick={() => scrollPara("fixos")}>
-          <span className="icon">💸</span>
-          <span className="text">Fixos</span>
-        </button>
-        <button className="sidebar-button" onClick={() => scrollPara("metas")}>
-          <span className="icon">🎯</span>
-          <span className="text">Metas</span>
-        </button>
-        <button className="logout-button" onClick={() => {
-  localStorage.removeItem("token");
-  window.location.href = "/login";
-}}>
-  Logout
-</button>
+  <div style={{ width: "100%" }}>
+    <button className="sidebar-button" onClick={() => scrollPara("selecao")}>
+      <span className="icon">📆</span>
+      <span className="text">Selecionar Mês/Ano</span>
+    </button>
+    <button className="sidebar-button" onClick={() => scrollPara("formulario")}>
+      <span className="icon">➕</span>
+      <span className="text">Adicionar</span>
+    </button>
+    <button className="sidebar-button" onClick={() => scrollPara("tabela")}>
+      <span className="icon">📋</span>
+      <span className="text">Lançamentos</span>
+    </button>
+    <button className="sidebar-button" onClick={() => scrollPara("resumo")}>
+      <span className="icon">📊</span>
+      <span className="text">Resumo</span>
+    </button>
+    <button className="sidebar-button" onClick={() => scrollPara("dashboard")}>
+      <span className="icon">📈</span>
+      <span className="text">Dashboard</span>
+    </button>
+    <button className="sidebar-button" onClick={() => scrollPara("fixos")}>
+      <span className="icon">💸</span>
+      <span className="text">Fixos</span>
+    </button>
+    <button className="sidebar-button" onClick={() => scrollPara("metas")}>
+      <span className="icon">🎯</span>
+      <span className="text">Metas</span>
+    </button>
+  </div>
 
-      </div>
+  <button
+    className="logout-button"
+    onClick={() => {
+      localStorage.removeItem("token");
+      window.location.href = "/login";
+    }}
+  >
+    Logout
+  </button>
+</div>
+
 
       <div className="container">
         <h1>📒 Controle Financeiro</h1>
